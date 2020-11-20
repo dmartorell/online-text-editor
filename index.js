@@ -1,3 +1,60 @@
 
+DecoupledDocumentEditor
+.create( document.querySelector( '#editor' ), {
+    
+    toolbar: {
+        items: [
+            'heading',
+            '|',
+            'fontSize',
+            'fontFamily',
+            '|',
+            'bold',
+            'italic',
+            'underline',
+            'strikethrough',
+            'highlight',
+            '|',
+            'alignment',
+            '|',
+            'numberedList',
+            'bulletedList',
+            '|',
+            'indent',
+            'outdent',
+            '|',
+            'link',
+            'blockQuote',
+            'imageUpload',
+            'mediaEmbed',
+            'CKFinder',
+            '|',
+            'undo',
+            'redo'
+        ]
+    },
+    language: 'es',
+    image: {
+        toolbar: [
+            'imageTextAlternative',
+            'imageStyle:full',
+            'imageStyle:side'
+        ]
+    },
+    table: {
+        contentToolbar: [
+            'tableColumn',
+            'tableRow',
+            'mergeTableCells'
+        ]
+    },
+    
+    
+} ).then( editor => {
+    const toolbarContainer = document.querySelector( '#toolbar-container' );
 
-// MAIN JS FILE.
+    toolbarContainer.appendChild( editor.ui.view.toolbar.element );
+} )
+.catch( error => {
+    console.error( error );
+} );
