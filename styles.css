@@ -1,0 +1,16 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+#toolbar-container {
+  padding: 2em;
+  width: 60%;
+  margin: 0 auto;
+}
+
+#editor {
+  width: 58%;
+  margin: 0 auto;
+}
