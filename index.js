@@ -1,60 +1,11 @@
+const express = require('express');
+const app = express();
 
-DecoupledDocumentEditor
-.create( document.querySelector( '#editor' ), {
-    
-    toolbar: {
-        items: [
-            'heading',
-            '|',
-            'fontSize',
-            'fontFamily',
-            '|',
-            'bold',
-            'italic',
-            'underline',
-            'strikethrough',
-            'highlight',
-            '|',
-            'alignment',
-            '|',
-            'numberedList',
-            'bulletedList',
-            '|',
-            'indent',
-            'outdent',
-            '|',
-            'link',
-            'blockQuote',
-            'imageUpload',
-            'mediaEmbed',
-            'CKFinder',
-            '|',
-            'undo',
-            'redo'
-        ]
-    },
-    language: 'es',
-    image: {
-        toolbar: [
-            'imageTextAlternative',
-            'imageStyle:full',
-            'imageStyle:side'
-        ]
-    },
-    table: {
-        contentToolbar: [
-            'tableColumn',
-            'tableRow',
-            'mergeTableCells'
-        ]
-    },
-    
-    
-} ).then( editor => {
-    const toolbarContainer = document.querySelector( '#toolbar-container' );
+app.use(express.static('public'));
 
-    toolbarContainer.appendChild( editor.ui.view.toolbar.element );
-} )
-.catch( error => {
-    console.error( error );
-} );
+// app.get('/', (req, res) => {
+//     res.sendFile('./index.html');
+// });
+
+app.listen(5500, () => console.log('Listening port 5500'));
+
