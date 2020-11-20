@@ -52,8 +52,12 @@ DecoupledDocumentEditor
     
 } ).then( editor => {
     const toolbarContainer = document.querySelector( '#toolbar-container' );
-
     toolbarContainer.appendChild( editor.ui.view.toolbar.element );
+    const sendButton = document.querySelector('#btn');
+    sendButton.addEventListener('click', ()=> {
+        console.log(editor.getData());
+    });
+
 } )
 .catch( error => {
     console.error( error );
